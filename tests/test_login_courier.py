@@ -1,7 +1,6 @@
 import allure
-import pytest
 from data import *
-from tests.conftest import *
+from conftest import *
 
 
 class TestLoginCourier:
