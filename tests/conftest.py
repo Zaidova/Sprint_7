@@ -26,7 +26,8 @@ def register_new_courier_and_return_login_password():
     }
 
     # тела запроса для регистрации
-    return payload
+    yield payload
+    CourierPage.delete_courier(payload)
 
 @pytest.fixture
 def valid_log_in_payload(register_new_courier_and_return_login_password):

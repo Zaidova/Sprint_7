@@ -16,10 +16,12 @@ class TestCreateOrderColors:
         payload = ORDER_PAYLOAD.copy()
         payload["color"] = colors
         response  = OrderPage.create_order(ORDER_PAYLOAD)
-        assert response.status_code == 201 and response.json()["track"]
+        assert response.status_code == 201
+        assert response.json()["track"]
 
 
     @allure.title('Создание заказа без выбора цвета')
     def test_create_order_without_field_color(self):
         response  = OrderPage.create_order(ORDER_PAYLOAD)
-        assert response.status_code == 201 and response.json()["track"]
+        assert response.status_code == 201
+        assert response.json()["track"]

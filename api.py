@@ -17,6 +17,11 @@ class CourierPage:
         response = requests.post(url.LOGIN_COURIER_URL, data=payload, timeout=20)
         return response
 
+    @staticmethod
+    @allure.step('Отправляем запрос на удаление курьера')
+    def delete_courier(payload):
+        return requests.delete(url.COURIER_URL + str(payload))
+
 class OrderPage:
 
     @staticmethod
